@@ -1,0 +1,30 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "cmake .. && make ; rm ../Build/* ; cp ./*.bin ../Build",
+            ///"command": "cmake .. && make && scp ./*.bin pc:/Network_File_System/RFS/home/root/FOTA/Application/Build/",
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": "cmake .. && make clean",
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+	]
+}
